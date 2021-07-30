@@ -32,7 +32,7 @@ class TareaController extends Controller
             $tarea = new Tarea;
             $tarea->description = $request->description;
             $tarea->importance = $request->importance;
-            $tarea->save;
+            $tarea->save();
 
             return response()->json(['tarea' => $tarea], 201);
         } catch (\Throwable $th) {
@@ -63,7 +63,7 @@ class TareaController extends Controller
         try {
             $tarea->description = $request->description;
             $tarea->importance = $request->importance;
-            $tarea->save;
+            $tarea->save();
 
             return response()->json(['tarea' => $tarea]);
         } catch (\Throwable $th) {
